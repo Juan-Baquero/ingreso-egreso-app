@@ -29,7 +29,7 @@ export class IngresoEgresoService {
       .snapshotChanges()
       .pipe(
         map((snapshot) =>
-          snapshot.map((doc) => ({
+          snapshot.map((doc: any) => ({
             uid: doc.payload.doc.id,
             ...(doc.payload.doc.data() as any),
           }))
